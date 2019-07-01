@@ -68,6 +68,9 @@
     }
 
     FHIR.oauth2.ready(onReady, onError);
+
+    getRiskData();
+    
     return ret.promise();
 
   };
@@ -114,8 +117,7 @@
     }
   }
 
-  window.getRiskData = function() {
-  {
+  function getRiskData() {
     console.log("getRiskData() executing");
     $.ajax({
       url: "https://myserverlessapi.azurewebsites.net/api/HttpTrigger1?code=8gZYAUxOo4G9ARQFKCpayTfHNTBnHw/5t3jlNQB8/7sujCC/W35I0g==",
