@@ -114,6 +114,18 @@
     }
   }
 
+  function getRiskData()
+  {
+    $.ajax({
+      url: "https://myserverlessapi.azurewebsites.net/api/HttpTrigger1?code=8gZYAUxOo4G9ARQFKCpayTfHNTBnHw/5t3jlNQB8/7sujCC/W35I0g==",
+      cache: false,
+      success: function(data){
+        console.log(data);
+        $("#currentRisk").html(data);
+      }
+    });
+  }
+
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();
