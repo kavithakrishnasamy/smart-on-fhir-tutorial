@@ -114,7 +114,7 @@
     }
   }
 
-  function getRiskData()
+  window.getRiskData = function() {
   {
     console.log("getRiskData() executing");
     $.ajax({
