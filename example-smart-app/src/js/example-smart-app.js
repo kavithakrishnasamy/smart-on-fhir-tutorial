@@ -125,9 +125,12 @@
       success: function(data){
         console.log('Azure Data:'+data);
         console.log('Azure Data:'+data.currentRisk);
-        debugger;
+      //  debugger;
         $("#currentRisk").html(data.currentRisk);
         $("#potentialRisk").html(data.potentialRisk);
+        $("#lowestPossibleRisk").html(data.lowestPossibleRisk);
+        $("#actionToReducedRisk").html(data.actionToReducedRisk);
+        $("#riskCategory").html(data.riskCategory);
         
       }
     });
