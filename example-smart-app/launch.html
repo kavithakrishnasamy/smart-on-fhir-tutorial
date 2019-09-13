@@ -32,7 +32,7 @@
         // Generate a unique session key string (here we just generate a random number
         // for simplicity, but this is not 100% collision-proof)
         var state = Math.round(Math.random()*100000000).toString();
-        
+        debugger;
         // To keep things flexible, let's construct the launch URL by taking the base of the 
         // current URL and replace "launch.html" with "index.html".
         var launchUri = window.location.protocol + "//" + window.location.host + window.location.pathname;
