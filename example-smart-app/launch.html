@@ -44,7 +44,7 @@
         // Let's request the conformance statement from the SMART on FHIR API server and
         // find out the endpoint URLs for the authorization server
         $.get(conformanceUri, function(r){
-
+debugger;
             var authUri,
                 tokenUri;
             
@@ -85,6 +85,7 @@
         // based on http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
         function getUrlParameter(sParam)
         {
+            debugger;
             var sPageURL = window.location.search.substring(1);
             var sURLVariables = sPageURL.split('&');
             for (var i = 0; i < sURLVariables.length; i++) 
