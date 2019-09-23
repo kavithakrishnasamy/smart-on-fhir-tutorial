@@ -9,7 +9,7 @@
         // get the URL parameters received from the authorization server
         var state = getUrlParameter("state");  // session key
         var code = getUrlParameter("code");    // authorization code
-        
+        debugger;
         // load the app parameters stored in the session
         var params = JSON.parse(sessionStorage[state]);  // load app session
         var tokenUri = params.tokenUri;
@@ -39,6 +39,7 @@
         
         // obtain authorization token from the authorization service using the authorization code
         $.ajax(options).done(function(res){
+          debugger;
             // should get back the access token and the patient ID
             var accessToken = res.access_token;
             var patientId = res.patient;
@@ -57,6 +58,7 @@
                     "Authorization": "Bearer " + accessToken
                 },
             }).done(function(pt){
+              debugger;
                 var name = pt.name[0].given.join(" ") +" "+ pt.name[0].family.join(" ");
                 document.body.innerHTML += "<h3>Patient: " + name + "</h3>";
             });
@@ -66,6 +68,7 @@
         // based on http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
         function getUrlParameter(sParam)
         {
+          debugger;
             var sPageURL = window.location.search.substring(1);
             var sURLVariables = sPageURL.split('&');
             for (var i = 0; i < sURLVariables.length; i++) 
