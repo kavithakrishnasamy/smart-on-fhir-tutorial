@@ -18,7 +18,7 @@
         var state = getUrlParameter("state");  // session key
       debugger;
        var params = JSON.parse(sessionStorage[state]);  // load app session
-        var accesstoken = params.access_token;
+        var accessToken = params.access_token;
         var patientId = params.patient;
       var serviceUri = params.url;
       
