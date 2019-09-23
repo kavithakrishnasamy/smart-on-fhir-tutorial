@@ -61,6 +61,9 @@
               debugger;
                 var name = pt.name[0].given.join(" ") +" "+ pt.name[0].family.join(" ");
                 document.body.innerHTML += "<h3>Patient: " + name + "</h3>";
+            }).
+            error(function(error){
+              debugger;
             });
         });
         
