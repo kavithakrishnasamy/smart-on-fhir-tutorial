@@ -14,11 +14,11 @@
     <script>
         // get the URL parameters received from the authorization server
         var state = getUrlParameter("state");  // session key
-      
+      debugger;
        var params = JSON.parse(sessionStorage[state]);  // load app session
         var accesstoken = params.access_token;
         var patientId = params.patient;
-      var serviceUri = params.serviceUri;
+      var serviceUri = params.url;
       
       
       var url = serviceUri + "/Patient/" + patientId;
