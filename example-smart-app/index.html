@@ -47,11 +47,13 @@
             // should get back the access token and the patient ID
             var accessToken = res.access_token;
             var patientId = res.patient;
+           var service_Uri = _serviceUri;
             var _state = Math.round(Math.random()*100000000).toString();
           
           sessionStorage[_state] = JSON.stringify({
                 access_token: accessToken,
-                patient: patientId
+                patient: patientId,
+                url: service_Uri
             });
           
             // and now we can use these to construct standard FHIR
