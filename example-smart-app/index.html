@@ -19,6 +19,8 @@
         var redirectUri = params.redirectUri;
         
       
+       var _serviceUri = params.serviceUri;
+      
    
         // Prep the token exchange call parameters
         var data = {
@@ -49,8 +51,7 @@
           
           sessionStorage[_state] = JSON.stringify({
                 access_token: accessToken,
-                patient: patientId,
-                serviceUri = serviceUri
+                patient: patientId
             });
           
             // and now we can use these to construct standard FHIR
