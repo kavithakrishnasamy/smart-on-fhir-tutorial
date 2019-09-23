@@ -11,6 +11,34 @@
     -->
   </head>
   <body>
+    <script>
+        // get the URL parameters received from the authorization server
+        var state = getUrlParameter("state");  // session key
+      
+       var params = JSON.parse(sessionStorage[state]);  // load app session
+        var accesstoken = params.access_token;
+        var patientId = params.patient;
+      var serviceUri = params.serviceUri;
+      
+      
+      var url = serviceUri + "/Patient/" + patientId;
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "json",
+                headers: {
+                    "Authorization": "Bearer " + accessToken
+                },
+            }).done(function(pt){
+              debugger;
+                var name = pt.name[0].given.join(" ") +" "+ pt.name[0].family.join(" ");
+                document.body.innerHTML += "<h3>Patient: " + name + "</h3>";
+            }).
+            error(function(error){
+              debugger;
+            });
+      
+    </script>
     <!-- Required JS files to enable this page to embed within an MPage -->
     <!--
       Temporarily disable cerner-smart-embeddable-lib
