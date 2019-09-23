@@ -62,22 +62,7 @@
            window.location.href = "https://kavithakrishnasamy.github.io/smart-on-fhir-tutorial/example-smart-app/health.html?" +              
                 "state=" + _state;
           
-            var url = serviceUri + "/Patient/" + patientId;
-            $.ajax({
-                url: url,
-                type: "GET",
-                dataType: "json",
-                headers: {
-                    "Authorization": "Bearer " + accessToken
-                },
-            }).done(function(pt){
-              debugger;
-                var name = pt.name[0].given.join(" ") +" "+ pt.name[0].family.join(" ");
-                document.body.innerHTML += "<h3>Patient: " + name + "</h3>";
-            }).
-            error(function(error){
-              debugger;
-            });
+            
         });
         
         // Convenience function for parsing of URL parameters
